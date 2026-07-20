@@ -10,11 +10,16 @@
 </head>
 <body>
 
+    <!-- Dark/Light Mode Toggle Button -->
+    <div class="theme-toggle">
+        <button id="theme-btn"><i class="fas fa-moon"></i></button>
+    </div>
+
     <!-- Header Section -->
     <header>
         <div class="container">
             <!-- Profile Photo -->
-            <img src="profile.jpg" alt="Sangam Parajuli" class="profile-pic">
+            <img src="Photo%20for%20profile%20.jpg" alt="Sangam Parajuli" class="profile-pic">
             
             <h1 class="logo">Sangam <span>Parajuli</span></h1>
             <p class="tagline">Student | Web Development & Cyber Security Enthusiast</p>
@@ -22,6 +27,13 @@
             <div class="header-badges">
                 <span class="badge"><i class="fas fa-child"></i> Age: 14 Years Old</span>
                 <span class="badge"><i class="fas fa-graduation-cap"></i> Class 8 Student</span>
+            </div>
+
+            <!-- Social Media & Contact Links -->
+            <div class="social-links">
+                <a href="https://github.com/Sangamparajuli-sketch2069" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="mailto:your-email@gmail.com" title="Email Me"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
     </header>
@@ -102,6 +114,22 @@
 
         </div>
     </section>
+
+    <!-- JavaScript for Dark/Light Mode -->
+    <script>
+        const themeBtn = document.getElementById('theme-btn');
+        themeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const icon = themeBtn.querySelector('i');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+    </script>
 
 </body>
 </html>
