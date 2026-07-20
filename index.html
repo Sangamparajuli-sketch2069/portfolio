@@ -15,7 +15,7 @@
         <button id="theme-btn"><i class="fas fa-moon"></i></button>
     </div>
 
-    <!-- Header Section -->
+    <!-- 1. Header Section -->
     <header>
         <div class="container">
             <!-- Profile Photo -->
@@ -29,7 +29,7 @@
                 <span class="badge"><i class="fas fa-graduation-cap"></i> Class 8 Student</span>
             </div>
 
-            <!-- Visitor Counter Badge (Feature 4) -->
+            <!-- Visitor Counter Badge -->
             <div class="visitor-badge">
                 <img src="https://profile-counter.glitch.me/Sangamparajuli-sketch2069/count.svg" alt="Visitor Count">
             </div>
@@ -43,42 +43,7 @@
         </div>
     </header>
 
-    <!-- Hacker Interactive Terminal (Feature 1) -->
-    <section class="terminal-section container">
-        <h2><i class="fas fa-terminal"></i> Interactive Security Terminal</h2>
-        <div class="terminal-window">
-            <div class="terminal-header">
-                <span class="btn-red"></span>
-                <span class="btn-yellow"></span>
-                <span class="btn-green"></span>
-                <span class="terminal-title">sangam@security-lab:~</span>
-            </div>
-            <div class="terminal-body" id="terminal-body">
-                <p><span class="prompt">sangam@security-lab:~$</span> Welcome! Type <span class="cmd-highlight">'help'</span> to see available security commands.</p>
-            </div>
-            <div class="terminal-input-line">
-                <span class="prompt">sangam@security-lab:~$</span>
-                <input type="text" id="terminal-input" placeholder="type a command..." autofocus autocomplete="off">
-            </div>
-        </div>
-    </section>
-
-    <!-- Cyber Tool: Password Strength Checker (Feature 2) -->
-    <section class="tool-section container">
-        <h2><i class="fas fa-shield-alt"></i> Live Cyber Tool: Password Analyzer</h2>
-        <div class="tool-card">
-            <p>Test your password security against brute-force cracking algorithms:</p>
-            <div class="input-group">
-                <input type="password" id="pwd-input" placeholder="Type a password to test..." oninput="checkPasswordStrength()">
-            </div>
-            <div class="strength-meter">
-                <div id="strength-bar"></div>
-            </div>
-            <p id="strength-text">Status: Waiting for input...</p>
-        </div>
-    </section>
-
-    <!-- About Section -->
+    <!-- 2. About Me Section -->
     <section class="about container">
         <h2><i class="fas fa-user-code"></i> About Me</h2>
         <p>Hello! I am <strong>Sangam Parajuli</strong>, a 14-year-old student passionate about computer technology, web development, and cyber security.</p>
@@ -110,7 +75,7 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- 3. Skills Section -->
     <section class="skills container">
         <h2><i class="fas fa-tools"></i> My Skills</h2>
         <div class="skills-grid">
@@ -122,7 +87,7 @@
         </div>
     </section>
 
-    <!-- Certificates Section -->
+    <!-- 4. Certificates Section -->
     <section class="certificates container">
         <h2><i class="fas fa-certificate"></i> My Certifications</h2>
         <div class="cert-grid">
@@ -134,7 +99,47 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- 5. Interactive Cyber Projects Section (Shifted to Lower Part) -->
+    <section class="projects-container container">
+        <h2><i class="fas fa-laptop-code"></i> Cyber Security Tools & Labs</h2>
+        
+        <!-- Hacker Interactive Terminal -->
+        <div class="terminal-section" style="margin-bottom: 30px;">
+            <h3><i class="fas fa-terminal"></i> Interactive Security Terminal</h3>
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="btn-red"></span>
+                    <span class="btn-yellow"></span>
+                    <span class="btn-green"></span>
+                    <span class="terminal-title">sangam@security-lab:~</span>
+                </div>
+                <div class="terminal-body" id="terminal-body">
+                    <p><span class="prompt">sangam@security-lab:~$</span> Welcome! Type <span class="cmd-highlight">'help'</span> to see available security commands.</p>
+                </div>
+                <div class="terminal-input-line">
+                    <span class="prompt">sangam@security-lab:~$</span>
+                    <input type="text" id="terminal-input" placeholder="type a command..." autocomplete="off">
+                </div>
+            </div>
+        </div>
+
+        <!-- Password Strength Checker -->
+        <div class="tool-section">
+            <h3><i class="fas fa-shield-alt"></i> Password Strength Analyzer</h3>
+            <div class="tool-card">
+                <p>Test your password security against brute-force cracking algorithms:</p>
+                <div class="input-group" style="margin-top: 10px;">
+                    <input type="password" id="pwd-input" placeholder="Type a password to test..." oninput="checkPasswordStrength()">
+                </div>
+                <div class="strength-meter">
+                    <div id="strength-bar"></div>
+                </div>
+                <p id="strength-text">Status: Waiting for input...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Contact Section -->
     <section id="contact" class="contact container">
         <h2><i class="fas fa-paper-plane"></i> Get In Touch</h2>
         <form action="mailto:sangamparajuli2069@gmail.com" method="post" enctype="text/plain" class="contact-form">
@@ -151,16 +156,16 @@
         </form>
     </section>
 
-    <!-- Footer Section -->
+    <!-- 7. Footer Section -->
     <footer>
         <div class="container">
             <p>&copy; <span id="year"></span> <strong>Sangam Parajuli</strong>. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- JavaScript logic -->
+    <!-- JavaScript Section -->
     <script>
-        // Dark/Light Mode Switcher
+        // Dark/Light Mode
         const themeBtn = document.getElementById('theme-btn');
         themeBtn.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
@@ -177,7 +182,7 @@
         // Dynamic Year
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Feature 1: Interactive Terminal Script
+        // Terminal Logic
         const termInput = document.getElementById('terminal-input');
         const termBody = document.getElementById('terminal-body');
 
@@ -195,13 +200,13 @@
                 } else if (cmd === 'whoami') {
                     response = "You are an honored guest inspecting a future Security Engineer's portfolio.";
                 } else if (cmd === 'matrix') {
-                    response = "<span style='color: #00ff00;'>01001000 01000001 01000011 01001011 01000101 01000100 !! SYSTEM SECURE !!</span>";
+                    response = "<span style='color: #00ff00;'>01001000 01000011 01001001 01001011 !! SYSTEM SECURE !!</span>";
                 } else if (cmd === 'clear') {
                     termBody.innerHTML = '';
                     termInput.value = '';
                     return;
                 } else if (cmd !== '') {
-                    response = `Command not recognized: '${cmd}'. Type <span class='cmd-highlight'>'help'</span> for command list.`;
+                    response = `Command not recognized: '${cmd}'. Type <span class='cmd-highlight'>'help'</span> for list.`;
                 }
 
                 if (cmd !== '') {
@@ -213,7 +218,7 @@
             }
         });
 
-        // Feature 2: Password Strength Checker Script
+        // Password Checker Logic
         function checkPasswordStrength() {
             const pwd = document.getElementById('pwd-input').value;
             const bar = document.getElementById('strength-bar');
