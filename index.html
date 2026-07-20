@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sangam Parajuli | Portfolio</title>
+    <title>Sangam Parajuli | Cyber Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <!-- FontAwesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -29,6 +29,11 @@
                 <span class="badge"><i class="fas fa-graduation-cap"></i> Class 8 Student</span>
             </div>
 
+            <!-- Visitor Counter Badge (Feature 4) -->
+            <div class="visitor-badge">
+                <img src="https://profile-counter.glitch.me/Sangamparajuli-sketch2069/count.svg" alt="Visitor Count">
+            </div>
+
             <!-- Social Media & Contact Links -->
             <div class="social-links">
                 <a href="https://github.com/Sangamparajuli-sketch2069" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
@@ -38,7 +43,42 @@
         </div>
     </header>
 
-    <!-- About & Personal Info Section -->
+    <!-- Hacker Interactive Terminal (Feature 1) -->
+    <section class="terminal-section container">
+        <h2><i class="fas fa-terminal"></i> Interactive Security Terminal</h2>
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <span class="btn-red"></span>
+                <span class="btn-yellow"></span>
+                <span class="btn-green"></span>
+                <span class="terminal-title">sangam@security-lab:~</span>
+            </div>
+            <div class="terminal-body" id="terminal-body">
+                <p><span class="prompt">sangam@security-lab:~$</span> Welcome! Type <span class="cmd-highlight">'help'</span> to see available security commands.</p>
+            </div>
+            <div class="terminal-input-line">
+                <span class="prompt">sangam@security-lab:~$</span>
+                <input type="text" id="terminal-input" placeholder="type a command..." autofocus autocomplete="off">
+            </div>
+        </div>
+    </section>
+
+    <!-- Cyber Tool: Password Strength Checker (Feature 2) -->
+    <section class="tool-section container">
+        <h2><i class="fas fa-shield-alt"></i> Live Cyber Tool: Password Analyzer</h2>
+        <div class="tool-card">
+            <p>Test your password security against brute-force cracking algorithms:</p>
+            <div class="input-group">
+                <input type="password" id="pwd-input" placeholder="Type a password to test..." oninput="checkPasswordStrength()">
+            </div>
+            <div class="strength-meter">
+                <div id="strength-bar"></div>
+            </div>
+            <p id="strength-text">Status: Waiting for input...</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
     <section class="about container">
         <h2><i class="fas fa-user-code"></i> About Me</h2>
         <p>Hello! I am <strong>Sangam Parajuli</strong>, a 14-year-old student passionate about computer technology, web development, and cyber security.</p>
@@ -86,39 +126,18 @@
     <section class="certificates container">
         <h2><i class="fas fa-certificate"></i> My Certifications</h2>
         <div class="cert-grid">
-
-            <div class="cert-card">
-                <img src="cert1.jpg" alt="Certificate 1">
-                <h3>Certificate 1</h3>
-            </div>
-
-            <div class="cert-card">
-                <img src="cert2.jpg" alt="Certificate 2">
-                <h3>Certificate 2</h3>
-            </div>
-
-            <div class="cert-card">
-                <img src="cert3.jpg" alt="Certificate 3">
-                <h3>Certificate 3</h3>
-            </div>
-
-            <div class="cert-card">
-                <img src="cert4.jpg" alt="Certificate 4">
-                <h3>Certificate 4</h3>
-            </div>
-
-            <div class="cert-card">
-                <img src="cert5.jpg" alt="Certificate 5">
-                <h3>Certificate 5</h3>
-            </div>
-
+            <div class="cert-card"><img src="cert1.jpg" alt="Certificate 1"><h3>Certificate 1</h3></div>
+            <div class="cert-card"><img src="cert2.jpg" alt="Certificate 2"><h3>Certificate 2</h3></div>
+            <div class="cert-card"><img src="cert3.jpg" alt="Certificate 3"><h3>Certificate 3</h3></div>
+            <div class="cert-card"><img src="cert4.jpg" alt="Certificate 4"><h3>Certificate 4</h3></div>
+            <div class="cert-card"><img src="cert5.jpg" alt="Certificate 5"><h3>Certificate 5</h3></div>
         </div>
     </section>
 
-    <!-- Contact Form Section (Feature 2) -->
+    <!-- Contact Section -->
     <section id="contact" class="contact container">
         <h2><i class="fas fa-paper-plane"></i> Get In Touch</h2>
-        <form action="https://formspree.io/f/xbjnqkyv" method="POST" class="contact-form">
+        <form action="mailto:sangamparajuli2069@gmail.com" method="post" enctype="text/plain" class="contact-form">
             <div class="input-group">
                 <input type="text" name="name" placeholder="Your Full Name" required>
             </div>
@@ -132,16 +151,16 @@
         </form>
     </section>
 
-    <!-- Footer Section (Feature 4) -->
+    <!-- Footer Section -->
     <footer>
         <div class="container">
             <p>&copy; <span id="year"></span> <strong>Sangam Parajuli</strong>. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- JavaScript Section -->
+    <!-- JavaScript logic -->
     <script>
-        // Dark/Light Mode
+        // Dark/Light Mode Switcher
         const themeBtn = document.getElementById('theme-btn');
         themeBtn.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
@@ -155,9 +174,78 @@
             }
         });
 
-        // Dynamic Year for Footer
+        // Dynamic Year
         document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
 
+        // Feature 1: Interactive Terminal Script
+        const termInput = document.getElementById('terminal-input');
+        const termBody = document.getElementById('terminal-body');
+
+        termInput.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                const cmd = termInput.value.trim().toLowerCase();
+                let response = '';
+
+                if (cmd === 'help') {
+                    response = "Available commands: <b>about</b>, <b>skills</b>, <b>matrix</b>, <b>clear</b>, <b>whoami</b>";
+                } else if (cmd === 'about') {
+                    response = "Sangam Parajuli: 14 y/o Tech & Cyber Security Enthusiast from Nepal.";
+                } else if (cmd === 'skills') {
+                    response = "HTML5, CSS3, JavaScript, Python, Ethical Hacking Basics.";
+                } else if (cmd === 'whoami') {
+                    response = "You are an honored guest inspecting a future Security Engineer's portfolio.";
+                } else if (cmd === 'matrix') {
+                    response = "<span style='color: #00ff00;'>01001000 01000001 01000011 01001011 01000101 01000100 !! SYSTEM SECURE !!</span>";
+                } else if (cmd === 'clear') {
+                    termBody.innerHTML = '';
+                    termInput.value = '';
+                    return;
+                } else if (cmd !== '') {
+                    response = `Command not recognized: '${cmd}'. Type <span class='cmd-highlight'>'help'</span> for command list.`;
+                }
+
+                if (cmd !== '') {
+                    termBody.innerHTML += `<p><span class="prompt">sangam@security-lab:~$</span> ${termInput.value}</p>`;
+                    termBody.innerHTML += `<p class="response">${response}</p>`;
+                    termInput.value = '';
+                    termBody.scrollTop = termBody.scrollHeight;
+                }
+            }
+        });
+
+        // Feature 2: Password Strength Checker Script
+        function checkPasswordStrength() {
+            const pwd = document.getElementById('pwd-input').value;
+            const bar = document.getElementById('strength-bar');
+            const text = document.getElementById('strength-text');
+
+            let score = 0;
+            if (pwd.length > 5) score += 20;
+            if (pwd.length > 8) score += 20;
+            if (/[A-Z]/.test(pwd)) score += 20;
+            if (/[0-9]/.test(pwd)) score += 20;
+            if (/[^A-Za-z0-9]/.test(pwd)) score += 20;
+
+            bar.style.width = score + '%';
+
+            if (score === 0) {
+                bar.style.backgroundColor = 'transparent';
+                text.textContent = 'Status: Waiting for input...';
+                text.style.color = 'inherit';
+            } else if (score <= 40) {
+                bar.style.backgroundColor = '#ff4d4d';
+                text.textContent = 'Weak Password! Cracking time: Seconds ⚠️';
+                text.style.color = '#ff4d4d';
+            } else if (score <= 80) {
+                bar.style.backgroundColor = '#ffa500';
+                text.textContent = 'Medium Password! Cracking time: Few Days ⚡';
+                text.style.color = '#ffa500';
+            } else {
+                bar.style.backgroundColor = '#2ec4b6';
+                text.textContent = 'Strong Password! Cracking time: 100+ Years 🔒🔥';
+                text.style.color = '#2ec4b6';
+            }
+        }
+    </script>
 </body>
 </html>
