@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0f172a;
+    color: #f8fafc;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px 0;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    text-align: center;
+    padding: 50px 0;
+    border-bottom: 2px solid #38bdf8;
+}
+
+.logo {
+    font-size: 2.2rem;
+    color: #ffffff;
+}
+
+.logo span {
+    color: #38bdf8;
+}
+
+.tagline {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+/* Titles */
+h2 {
+    color: #38bdf8;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 8px;
+}
+
+/* Skills */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 15px;
+}
+
+.skill-card {
+    background: #1e293b;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #334155;
+    color: #e2e8f0;
+}
+
+.skill-card i {
+    color: #38bdf8;
+    margin-right: 8px;
+}
+
+/* Certificates */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.cert-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+.badge {
+    display: inline-block;
+    padding: 3px 10px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.badge.high {
+    background: #f59e0b;
+    color: #0f172a;
+}
+
+.badge.sololearn {
+    background: #0ea5e9;
+    color: #ffffff;
+}
+
+.cert-card h3 {
+    color: #f1f5f9;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.issuer {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.meta {
+    color: #64748b;
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+}
+
+.highlights {
+    list-style-type: square;
+    padding-left: 20px;
+    color: #94a3b8;
+    font-size: 0.88rem;
+}
+
+.highlights li {
+    margin-bottom: 4px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1e293b;
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-top: 40px;
+}
