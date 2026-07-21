@@ -10,19 +10,29 @@
 </head>
 <body>
 
+    <!-- Animated Particles Background -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
     <!-- Dark/Light Mode Toggle Button -->
     <div class="theme-toggle">
         <button id="theme-btn"><i class="fas fa-moon"></i></button>
     </div>
 
-    <!-- 1. Header Section -->
+    <!-- Header Section -->
     <header>
         <div class="container">
-            <!-- Profile Photo -->
-            <img src="Photo%20for%20profile%20.jpg" alt="Sangam Parajuli" class="profile-pic">
+            <div class="profile-avatar-glow">
+                <img src="Photo%20for%20profile%20.jpg" alt="Sangam Parajuli" class="profile-pic">
+            </div>
             
-            <h1 class="logo">Sangam <span>Parajuli</span></h1>
-            <p class="tagline">Student | Web Development & Cyber Security Enthusiast</p>
+            <h1 class="logo">Sangam <span class="neon-text">Parajuli</span></h1>
+            <p class="tagline"><i class="fas fa-code"></i> Student | Web Development & Cyber Security Enthusiast</p>
             
             <div class="header-badges">
                 <span class="badge"><i class="fas fa-child"></i> Age: 14 Years Old</span>
@@ -43,30 +53,32 @@
         </div>
     </header>
 
-    <!-- 2. About Me Section -->
+    <!-- About Me Section -->
     <section class="about container">
-        <h2><i class="fas fa-user-code"></i> About Me</h2>
-        <p>Hello! I am <strong>Sangam Parajuli</strong>, a 14-year-old student passionate about computer technology, web development, and cyber security.</p>
+        <h2 class="section-title"><i class="fas fa-user-code"></i> About Me</h2>
+        <div class="glass-card main-about">
+            <p>Hello! I am <strong>Sangam Parajuli</strong>, a 14-year-old student passionate about computer technology, web development, and cyber security.</p>
+        </div>
         
         <div class="info-grid">
-            <div class="info-card">
-                <i class="fas fa-school"></i>
+            <div class="glass-card info-card">
+                <i class="fas fa-school card-icon"></i>
                 <div>
                     <h4>School Name</h4>
                     <p>Shree Gauri Shankar Secondary School, Nijgadh-8, Bara</p>
                 </div>
             </div>
 
-            <div class="info-card">
-                <i class="fas fa-home"></i>
+            <div class="glass-card info-card">
+                <i class="fas fa-home card-icon"></i>
                 <div>
                     <h4>Permanent Address</h4>
                     <p>Rautahat-4, Pokharbhinda, Nepal</p>
                 </div>
             </div>
 
-            <div class="info-card">
-                <i class="fas fa-map-marker-alt"></i>
+            <div class="glass-card info-card">
+                <i class="fas fa-map-marker-alt card-icon"></i>
                 <div>
                     <h4>Temporary Address</h4>
                     <p>Nijgadh-8, Bara, Nepal</p>
@@ -75,33 +87,33 @@
         </div>
     </section>
 
-    <!-- 3. Skills Section -->
+    <!-- Skills Section -->
     <section class="skills container">
-        <h2><i class="fas fa-tools"></i> My Skills</h2>
+        <h2 class="section-title"><i class="fas fa-tools"></i> My Skills</h2>
         <div class="skills-grid">
-            <div class="skill-card"><i class="fab fa-html5"></i> HTML5</div>
-            <div class="skill-card"><i class="fab fa-css3-alt"></i> CSS3</div>
-            <div class="skill-card"><i class="fab fa-js"></i> JavaScript</div>
-            <div class="skill-card"><i class="fab fa-python"></i> Python</div>
-            <div class="skill-card"><i class="fas fa-shield-alt"></i> Cyber Security</div>
+            <div class="glass-card skill-card"><i class="fab fa-html5"></i> HTML5</div>
+            <div class="glass-card skill-card"><i class="fab fa-css3-alt"></i> CSS3</div>
+            <div class="glass-card skill-card"><i class="fab fa-js"></i> JavaScript</div>
+            <div class="glass-card skill-card"><i class="fab fa-python"></i> Python</div>
+            <div class="glass-card skill-card"><i class="fas fa-shield-alt"></i> Cyber Security</div>
         </div>
     </section>
 
-    <!-- 4. Certificates Section -->
+    <!-- Certificates Section -->
     <section class="certificates container">
-        <h2><i class="fas fa-certificate"></i> My Certifications</h2>
+        <h2 class="section-title"><i class="fas fa-certificate"></i> My Certifications</h2>
         <div class="cert-grid">
-            <div class="cert-card"><img src="cert1.jpg" alt="Certificate 1"><h3>Certificate 1</h3></div>
-            <div class="cert-card"><img src="cert2.jpg" alt="Certificate 2"><h3>Certificate 2</h3></div>
-            <div class="cert-card"><img src="cert3.jpg" alt="Certificate 3"><h3>Certificate 3</h3></div>
-            <div class="cert-card"><img src="cert4.jpg" alt="Certificate 4"><h3>Certificate 4</h3></div>
-            <div class="cert-card"><img src="cert5.jpg" alt="Certificate 5"><h3>Certificate 5</h3></div>
+            <div class="glass-card cert-card"><img src="cert1.jpg" alt="Certificate 1"><h3>Certificate 1</h3></div>
+            <div class="glass-card cert-card"><img src="cert2.jpg" alt="Certificate 2"><h3>Certificate 2</h3></div>
+            <div class="glass-card cert-card"><img src="cert3.jpg" alt="Certificate 3"><h3>Certificate 3</h3></div>
+            <div class="glass-card cert-card"><img src="cert4.jpg" alt="Certificate 4"><h3>Certificate 4</h3></div>
+            <div class="glass-card cert-card"><img src="cert5.jpg" alt="Certificate 5"><h3>Certificate 5</h3></div>
         </div>
     </section>
 
-    <!-- 5. Interactive Cyber Projects Section (Shifted to Lower Part) -->
+    <!-- Interactive Cyber Tools Section -->
     <section class="projects-container container">
-        <h2><i class="fas fa-laptop-code"></i> Cyber Security Tools & Labs</h2>
+        <h2 class="section-title"><i class="fas fa-laptop-code"></i> Cyber Security Tools & Labs</h2>
         
         <!-- Hacker Interactive Terminal -->
         <div class="terminal-section" style="margin-bottom: 30px;">
@@ -126,7 +138,7 @@
         <!-- Password Strength Checker -->
         <div class="tool-section">
             <h3><i class="fas fa-shield-alt"></i> Password Strength Analyzer</h3>
-            <div class="tool-card">
+            <div class="glass-card tool-card">
                 <p>Test your password security against brute-force cracking algorithms:</p>
                 <div class="input-group" style="margin-top: 10px;">
                     <input type="password" id="pwd-input" placeholder="Type a password to test..." oninput="checkPasswordStrength()">
@@ -139,10 +151,10 @@
         </div>
     </section>
 
-    <!-- 6. Contact Section -->
+    <!-- Contact Section -->
     <section id="contact" class="contact container">
-        <h2><i class="fas fa-paper-plane"></i> Get In Touch</h2>
-        <form action="mailto:sangamparajuli2069@gmail.com" method="post" enctype="text/plain" class="contact-form">
+        <h2 class="section-title"><i class="fas fa-paper-plane"></i> Get In Touch</h2>
+        <form action="mailto:sangamparajuli2069@gmail.com" method="post" enctype="text/plain" class="glass-card contact-form">
             <div class="input-group">
                 <input type="text" name="name" placeholder="Your Full Name" required>
             </div>
@@ -156,21 +168,21 @@
         </form>
     </section>
 
-    <!-- 7. Footer Section -->
+    <!-- Footer Section -->
     <footer>
         <div class="container">
             <p>&copy; <span id="year"></span> <strong>Sangam Parajuli</strong>. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- JavaScript Section -->
+    <!-- JavaScript Logic -->
     <script>
         // Dark/Light Mode
         const themeBtn = document.getElementById('theme-btn');
         themeBtn.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
+            document.body.classList.toggle('light-mode');
             const icon = themeBtn.querySelector('i');
-            if (document.body.classList.contains('dark-mode')) {
+            if (document.body.classList.contains('light-mode')) {
                 icon.classList.remove('fa-moon');
                 icon.classList.add('fa-sun');
             } else {
@@ -246,9 +258,9 @@
                 text.textContent = 'Medium Password! Cracking time: Few Days ⚡';
                 text.style.color = '#ffa500';
             } else {
-                bar.style.backgroundColor = '#2ec4b6';
+                bar.style.backgroundColor = '#00ffcc';
                 text.textContent = 'Strong Password! Cracking time: 100+ Years 🔒🔥';
-                text.style.color = '#2ec4b6';
+                text.style.color = '#00ffcc';
             }
         }
     </script>
