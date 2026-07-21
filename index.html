@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <!-- Animated Particles Background -->
+    <!-- Animated Background -->
     <div class="particles">
         <div class="particle"></div>
         <div class="particle"></div>
@@ -19,7 +19,7 @@
         <div class="particle"></div>
     </div>
 
-    <!-- Header Section -->
+    <!-- Header Section (Main Profile Photo Intact) -->
     <header>
         <div class="container">
             <div class="profile-avatar-glow">
@@ -37,15 +37,14 @@
                 <span class="badge"><i class="fas fa-child"></i> Age: 14 Years Old</span>
                 <span class="badge"><i class="fas fa-graduation-cap"></i> Class 8 Student</span>
                 <span class="badge"><i class="fas fa-gavel"></i> Law Learner</span>
-                <span class="badge"><i class="fas fa-user-shield"></i> Cyber Law Aspirant</span>
+                <span class="badge"><i class="fas fa-code"></i> Developer</span>
+                <span class="badge"><i class="fas fa-shield-halved"></i> Cyber Security Cell</span>
             </div>
 
-            <!-- Visitor Counter Badge -->
             <div class="visitor-badge">
                 <img src="https://profile-counter.glitch.me/Sangamparajuli-sketch2069/count.svg" alt="Visitor Count">
             </div>
 
-            <!-- Social Links -->
             <div class="social-links">
                 <a href="https://github.com/Sangamparajuli-sketch2069" target="_blank"><i class="fab fa-github"></i></a>
                 <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -53,6 +52,34 @@
             </div>
         </div>
     </header>
+
+    <!-- 🆔 Digital Cyber ID Card Section (Linked with id_photo.jpg) -->
+    <section class="id-card-section container">
+        <h2 class="section-title"><i class="fas fa-id-card"></i> Digital Cyber & Developer ID</h2>
+        <div class="glass-card cyber-id-card">
+            <div class="id-card-header">
+                <i class="fas fa-microchip"></i> CYBER SECURITY & DEVELOPER CELL
+            </div>
+            <div class="id-card-body">
+                <div class="id-photo-container">
+                    <img src="id_photo.jpg" alt="Sangam ID Photo" class="id-photo">
+                    <span class="verified-badge"><i class="fas fa-check-circle"></i> VERIFIED</span>
+                </div>
+                <div class="id-details">
+                    <h3>Sangam Parajuli</h3>
+                    <p class="id-role"><i class="fas fa-user-shield"></i> Cyber Security & Web Developer</p>
+                    <p><strong>ID No:</strong> #SP-2069-DEV</p>
+                    <p><strong>Status:</strong> Class 8 / Active Student</p>
+                    <p><strong>Focus:</strong> Cyber Law & Ethical Defense</p>
+                    <p><strong>School:</strong> Shree Gauri Shankar Sec. School</p>
+                </div>
+            </div>
+            <div class="id-card-footer">
+                <span><i class="fas fa-lock"></i> AUTHORIZED PERSONNEL</span>
+                <i class="fas fa-barcode barcode-icon"></i>
+            </div>
+        </div>
+    </section>
 
     <!-- About Me Section -->
     <section class="about container">
@@ -101,10 +128,10 @@
         <h2 class="section-title"><i class="fas fa-tools"></i> My Skills & Focus</h2>
         <div class="skills-grid">
             <div class="glass-card skill-card"><i class="fas fa-gavel"></i> Law & Legal Studies</div>
-            <div class="glass-card skill-card"><i class="fas fa-shield-alt"></i> Cyber Security</div>
+            <div class="glass-card skill-card"><i class="fas fa-shield-alt"></i> Cyber Security Cell</div>
             <div class="glass-card skill-card"><i class="fab fa-html5"></i> HTML5 & CSS3</div>
             <div class="glass-card skill-card"><i class="fab fa-js"></i> JavaScript</div>
-            <div class="glass-card skill-card"><i class="fab fa-python"></i> Python</div>
+            <div class="glass-card skill-card"><i class="fab fa-python"></i> Python Developer</div>
         </div>
     </section>
 
@@ -120,13 +147,13 @@
         </div>
     </section>
 
-    <!-- 🤖 AI Assistant Section (Below Certificates) -->
+    <!-- 🤖 AI Assistant Section -->
     <section class="ai-section container">
         <h2 class="section-title"><i class="fas fa-robot"></i> Ask Sangam's AI Assistant</h2>
         <div class="glass-card ai-chat-box">
             <div class="chat-logs" id="chat-logs">
                 <div class="chat-msg bot-msg">
-                    <i class="fas fa-robot"></i> <span>Namaste! I am Sangam's Smart AI. Ask me about Sangam (Family, Law, Vision, Skills) or general questions (Math, Science, Tech, Nepal)!</span>
+                    <i class="fas fa-robot"></i> <span>Namaste! Ask me anything about Sangam's Developer ID, Cyber Cell, Law studies, Family, or General knowledge!</span>
                 </div>
             </div>
             <div class="chat-input-area">
@@ -153,14 +180,12 @@
         </form>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; <span id="year"></span> <strong>Sangam Parajuli</strong>. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- Smart Local AI Script Logic -->
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -172,7 +197,6 @@
 
             if (query === "") return;
 
-            // User Message Display
             chatLogs.innerHTML += `
                 <div class="chat-msg user-msg">
                     <span>${rawInput}</span> <i class="fas fa-user"></i>
@@ -181,7 +205,6 @@
 
             let botResponse = "";
 
-            // 1. Math Calculation Handler
             if (/^[0-9\s\+\-\*\/\.\(\)]+$/.test(query) && query.length > 1) {
                 try {
                     const result = eval(query);
@@ -190,55 +213,18 @@
                     botResponse = "Invalid math expression!";
                 }
             }
-
-            // 2. Personal & Family Knowledge Base
-            else if (query.includes('hi') || query.includes('hello') || query.includes('namaste') || query.includes('hey')) {
-                botResponse = "Namaste! I am Sangam's AI Assistant. Ask me about Sangam or general topics like Science, Coding, Law, and Nepal!";
-            } else if (query.includes('law') || query.includes('kanun') || query.includes('legal')) {
+            else if (query.includes('hi') || query.includes('hello') || query.includes('namaste')) {
+                botResponse = "Namaste! I am Sangam's AI Assistant. Ask me about Sangam's Developer ID, Cyber Security Cell, or Law studies!";
+            } else if (query.includes('id') || query.includes('card')) {
+                botResponse = "Sangam has a Digital Cyber & Developer ID (#SP-2069-DEV) for Cyber Security Cell & Development.";
+            } else if (query.includes('law') || query.includes('kanun')) {
                 botResponse = "Sangam is studying Law (कानून) alongside Web Development and Cyber Security at age 14.";
-            } else if (query.includes('family') || query.includes('father') || query.includes('mother') || query.includes('brother') || query.includes('shiba') || query.includes('susila') || query.includes('sanskar')) {
+            } else if (query.includes('family') || query.includes('father') || query.includes('mother') || query.includes('brother')) {
                 botResponse = "Family Info:<br>• Father: Shiba Ram Parajuli<br>• Mother: Susila Parajuli<br>• Brother: Sanskar Parajuli";
-            } else if (query.includes('vision') || query.includes('aim') || query.includes('goal') || query.includes('dream')) {
-                botResponse = "Sangam's vision is to become a Cyber Law Specialist & Ethical Hacker!";
-            } else if (query.includes('quote') || query.includes('motto')) {
-                botResponse = "Sangam's favorite quote: 'Success is not permanent and failure is not final. Work hard, dream big.'";
-            } else if (query.includes('language') || query.includes('speak')) {
-                botResponse = "Sangam speaks Nepali, English, and Hindi.";
-            } else if (query.includes('skill') || query.includes('python') || query.includes('code') || query.includes('html') || query.includes('css')) {
-                botResponse = "Sangam's skills include: Law Studies, Cyber Security, HTML5, CSS3, JavaScript, and Python.";
-            } else if (query.includes('age') || query.includes('school') || query.includes('class')) {
-                botResponse = "Sangam is 14 years old, studying in Class 8 at Shree Gauri Shankar Secondary School, Nijgadh-8, Bara.";
-            } else if (query.includes('address') || query.includes('live') || query.includes('where')) {
-                botResponse = "Permanent Address: Rautahat-4, Pokharbhinda<br>Temporary Address: Nijgadh-8, Bara";
+            } else {
+                botResponse = "Ask me about Sangam's Cyber ID, Law studies, skills, or math calculations!";
             }
 
-            // 3. General Knowledge & Tech QA
-            else if (query.includes('nepal') || query.includes('capital')) {
-                botResponse = "The capital of Nepal is Kathmandu. Mount Everest, the highest peak in the world, is in Nepal!";
-            } else if (query.includes('html')) {
-                botResponse = "HTML (HyperText Markup Language) is the standard language used to create web pages.";
-            } else if (query.includes('css')) {
-                botResponse = "CSS (Cascading Style Sheets) is used to style and design web pages.";
-            } else if (query.includes('javascript') || query.includes('js')) {
-                botResponse = "JavaScript is a programming language used to add interactivity to web pages.";
-            } else if (query.includes('python')) {
-                botResponse = "Python is a powerful, easy-to-learn programming language used for web dev, AI, and Cyber Security.";
-            } else if (query.includes('cyber security') || query.includes('hacking')) {
-                botResponse = "Cyber Security involves protecting systems, networks, and programs from digital attacks.";
-            } else if (query.includes('who created you') || query.includes('who made you')) {
-                botResponse = "I was built by Sangam Parajuli using JavaScript!";
-            } else if (query.includes('time') || query.includes('date')) {
-                botResponse = `Current Date & Time: ${new Date().toLocaleString()}`;
-            } else if (query.includes('joke')) {
-                botResponse = "Why do programmers prefer dark mode? Because light attracts bugs! 😄";
-            } 
-
-            // Fallback
-            else {
-                botResponse = "I don't have an exact answer for that yet, but you can ask me about Sangam's Law studies, family, coding, math problems (e.g., 25*4), or general topics!";
-            }
-
-            // Render Response
             setTimeout(() => {
                 chatLogs.innerHTML += `
                     <div class="chat-msg bot-msg">
