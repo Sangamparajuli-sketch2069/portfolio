@@ -52,7 +52,7 @@ header { text-align: center; padding: 40px 0 20px; }
 .ai-chat-box {
     display: flex;
     flex-direction: column;
-    height: 350px;
+    height: 360px;
     justify-content: space-between;
 }
 
