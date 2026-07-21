@@ -120,17 +120,17 @@
         </div>
     </section>
 
-    <!-- 🤖 AI Assistant Section (Directly Below Certificates) -->
+    <!-- 🤖 AI Assistant Section (Below Certificates) -->
     <section class="ai-section container">
         <h2 class="section-title"><i class="fas fa-robot"></i> Ask Sangam's AI Assistant</h2>
         <div class="glass-card ai-chat-box">
             <div class="chat-logs" id="chat-logs">
                 <div class="chat-msg bot-msg">
-                    <i class="fas fa-robot"></i> <span>Namaste! Ask me anything about Sangam's Law studies, Family, Vision, Skills, Quote, or School!</span>
+                    <i class="fas fa-robot"></i> <span>Namaste! I am Sangam's Smart AI. Ask me about Sangam (Family, Law, Vision, Skills) or general questions (Math, Science, Tech, Nepal)!</span>
                 </div>
             </div>
             <div class="chat-input-area">
-                <input type="text" id="ai-input" placeholder="Type a question... (e.g., 'law', 'family', 'father', 'quote')" autocomplete="off">
+                <input type="text" id="ai-input" placeholder="Ask a question or try math like 25*4..." autocomplete="off">
                 <button id="ai-send-btn" onclick="askAI()"><i class="fas fa-paper-plane"></i></button>
             </div>
         </div>
@@ -160,53 +160,93 @@
         </div>
     </footer>
 
-    <!-- AI Logic Script -->
+    <!-- Smart Local AI Script Logic -->
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
 
         function askAI() {
             const inputField = document.getElementById('ai-input');
             const chatLogs = document.getElementById('chat-logs');
-            const query = inputField.value.trim().toLowerCase();
+            const rawInput = inputField.value.trim();
+            const query = rawInput.toLowerCase();
 
             if (query === "") return;
 
+            // User Message Display
             chatLogs.innerHTML += `
                 <div class="chat-msg user-msg">
-                    <span>${inputField.value}</span> <i class="fas fa-user"></i>
+                    <span>${rawInput}</span> <i class="fas fa-user"></i>
                 </div>
             `;
 
-            let botResponse = "I'm not sure about that! Try asking about 'law', 'family', 'father', 'quote', 'languages', 'vision', or 'skills'.";
+            let botResponse = "";
 
-            if (query.includes('hi') || query.includes('hello') || query.includes('namaste')) {
-                botResponse = "Namaste! Sangam is a 14-year-old student learning Technology, Cyber Security, and Law!";
-            } else if (query.includes('law') || query.includes('kanun') || query.includes('legal')) {
-                botResponse = "Along with web development and coding, Sangam is passionately studying Law (कानून) at age 14.";
-            } else if (query.includes('family') || query.includes('father') || query.includes('mother') || query.includes('brother') || query.includes('shiba') || query.includes('susila') || query.includes('sanskar')) {
-                botResponse = "Family Details:\n• Father: Shiba Ram Parajuli\n• Mother: Susila Parajuli\n• Brother: Sanskar Parajuli";
-            } else if (query.includes('vision') || query.includes('aim') || query.includes('goal') || query.includes('future') || query.includes('dream')) {
-                botResponse = "Sangam's vision is to become a Cyber Law Specialist & Ethical Hacker, bridging technology and law.";
-            } else if (query.includes('quote') || query.includes('motto') || query.includes('thought')) {
-                botResponse = "Sangam's favorite quote: 'Success is not permanent and failure is not final. Work hard, dream big.'";
-            } else if (query.includes('language') || query.includes('speak') || query.includes('hindi') || query.includes('english')) {
-                botResponse = "Sangam can communicate fluently in Nepali, English, and Hindi!";
-            } else if (query.includes('skill') || query.includes('code') || query.includes('python')) {
-                botResponse = "Skills: Law Studies, Cyber Security, HTML5/CSS3, JavaScript, Python, and UI Design.";
-            } else if (query.includes('age') || query.includes('school') || query.includes('class')) {
-                botResponse = "Sangam is 14 years old, studying in Class 8 at Shree Gauri Shankar Secondary School, Nijgadh-8, Bara.";
-            } else if (query.includes('address') || query.includes('live')) {
-                botResponse = "Permanent: Rautahat-4, Pokharbhinda. Temporary: Nijgadh-8, Bara.";
+            // 1. Math Calculation Handler
+            if (/^[0-9\s\+\-\*\/\.\(\)]+$/.test(query) && query.length > 1) {
+                try {
+                    const result = eval(query);
+                    botResponse = `Answer: <b>${result}</b>`;
+                } catch (e) {
+                    botResponse = "Invalid math expression!";
+                }
             }
 
+            // 2. Personal & Family Knowledge Base
+            else if (query.includes('hi') || query.includes('hello') || query.includes('namaste') || query.includes('hey')) {
+                botResponse = "Namaste! I am Sangam's AI Assistant. Ask me about Sangam or general topics like Science, Coding, Law, and Nepal!";
+            } else if (query.includes('law') || query.includes('kanun') || query.includes('legal')) {
+                botResponse = "Sangam is studying Law (कानून) alongside Web Development and Cyber Security at age 14.";
+            } else if (query.includes('family') || query.includes('father') || query.includes('mother') || query.includes('brother') || query.includes('shiba') || query.includes('susila') || query.includes('sanskar')) {
+                botResponse = "Family Info:<br>• Father: Shiba Ram Parajuli<br>• Mother: Susila Parajuli<br>• Brother: Sanskar Parajuli";
+            } else if (query.includes('vision') || query.includes('aim') || query.includes('goal') || query.includes('dream')) {
+                botResponse = "Sangam's vision is to become a Cyber Law Specialist & Ethical Hacker!";
+            } else if (query.includes('quote') || query.includes('motto')) {
+                botResponse = "Sangam's favorite quote: 'Success is not permanent and failure is not final. Work hard, dream big.'";
+            } else if (query.includes('language') || query.includes('speak')) {
+                botResponse = "Sangam speaks Nepali, English, and Hindi.";
+            } else if (query.includes('skill') || query.includes('python') || query.includes('code') || query.includes('html') || query.includes('css')) {
+                botResponse = "Sangam's skills include: Law Studies, Cyber Security, HTML5, CSS3, JavaScript, and Python.";
+            } else if (query.includes('age') || query.includes('school') || query.includes('class')) {
+                botResponse = "Sangam is 14 years old, studying in Class 8 at Shree Gauri Shankar Secondary School, Nijgadh-8, Bara.";
+            } else if (query.includes('address') || query.includes('live') || query.includes('where')) {
+                botResponse = "Permanent Address: Rautahat-4, Pokharbhinda<br>Temporary Address: Nijgadh-8, Bara";
+            }
+
+            // 3. General Knowledge & Tech QA
+            else if (query.includes('nepal') || query.includes('capital')) {
+                botResponse = "The capital of Nepal is Kathmandu. Mount Everest, the highest peak in the world, is in Nepal!";
+            } else if (query.includes('html')) {
+                botResponse = "HTML (HyperText Markup Language) is the standard language used to create web pages.";
+            } else if (query.includes('css')) {
+                botResponse = "CSS (Cascading Style Sheets) is used to style and design web pages.";
+            } else if (query.includes('javascript') || query.includes('js')) {
+                botResponse = "JavaScript is a programming language used to add interactivity to web pages.";
+            } else if (query.includes('python')) {
+                botResponse = "Python is a powerful, easy-to-learn programming language used for web dev, AI, and Cyber Security.";
+            } else if (query.includes('cyber security') || query.includes('hacking')) {
+                botResponse = "Cyber Security involves protecting systems, networks, and programs from digital attacks.";
+            } else if (query.includes('who created you') || query.includes('who made you')) {
+                botResponse = "I was built by Sangam Parajuli using JavaScript!";
+            } else if (query.includes('time') || query.includes('date')) {
+                botResponse = `Current Date & Time: ${new Date().toLocaleString()}`;
+            } else if (query.includes('joke')) {
+                botResponse = "Why do programmers prefer dark mode? Because light attracts bugs! 😄";
+            } 
+
+            // Fallback
+            else {
+                botResponse = "I don't have an exact answer for that yet, but you can ask me about Sangam's Law studies, family, coding, math problems (e.g., 25*4), or general topics!";
+            }
+
+            // Render Response
             setTimeout(() => {
                 chatLogs.innerHTML += `
                     <div class="chat-msg bot-msg">
-                        <i class="fas fa-robot"></i> <span>${botResponse.replace(/\n/g, '<br>')}</span>
+                        <i class="fas fa-robot"></i> <span>${botResponse}</span>
                     </div>
                 `;
                 chatLogs.scrollTop = chatLogs.scrollHeight;
-            }, 300);
+            }, 250);
 
             inputField.value = "";
             chatLogs.scrollTop = chatLogs.scrollHeight;
